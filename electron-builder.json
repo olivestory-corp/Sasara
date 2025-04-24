@@ -53,7 +53,7 @@
   },
   "publish": {
     "provider": "generic",
-    "url": "https://dvnr1hi9fanyr.cloudfront.net/client-release/${platform}-${arch}/",
-    "updaterCacheDirName": "klee-electron-updater"
+    "url": "https://olivedownlod.s3.ap-northeast-2.amazonaws.com",
+    "updaterCacheDirName": "sasara-updater"
   }
 }

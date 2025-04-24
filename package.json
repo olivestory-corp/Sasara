@@ -2,7 +2,7 @@
   "name": "sasara-ai",
   "productName": "Sasara AI",
   "private": true,
-  "version": "1.5.1",
+  "version": "1.0.1",
   "scripts": {
     "prepare": "husky install",
     "dev": "vite",
