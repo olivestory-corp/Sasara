@@ -1,5 +1,5 @@
 import { getAutoUpdater } from './auto-updater'
-import { channel, isDev, isWindows } from '../env'
+import { channel, isWindows } from '../env'
 import { destroyMainWindow, getMainWindow } from '../window'
 import { WindowsUpdater } from './windows-updater'
 import { cleanupChildProcess } from '../kernel/executor'
@@ -98,70 +98,47 @@ export const registerUpdater = () => {
   autoUpdater.autoInstallOnAppQuit = true
   autoUpdater.autoRunAppAfterInstall = true
 
-  // const feedUrl: Exclude<Parameters<typeof autoUpdater.setFeedURL>[0], string> = {
-  // channel,
-  // provider: 'generic',
-  // url: import.meta.env.VITE_UPDATE_URL,
-  // This setting seems to be ineffective
-  // updaterCacheDirName: import.meta.env.DEV ? 'klee-updater-dev' : 'klee-updater',
-  // }
-
-  // logger.debug('auto-updater feed config', {
-  //   ...feedUrl,
-  //   // updateProvider: undefined,
-  // })
-
-  // autoUpdater.setFeedURL(feedUrl)
-
-  // register events for checkForUpdates
-  autoUpdater.on('checking-for-update', () => {
-    logger.info('Checking for update')
-  })
-  // New version available
-  autoUpdater.on('update-available', (info) => {
-    logger.info('Update available', info)
-    if (config.autoDownloadUpdate && allowAutoUpdate) {
-      downloadUpdate().catch((err) => {
-        logger.error(err)
-      })
-    }
-  })
-  // No new version
-  autoUpdater.on('update-not-available', (info) => {
-    logger.info('Update not available', info)
-  })
-  // Download progress
-  autoUpdater.on('download-progress', (e) => {
-    // logger.info(`Download progress: ${e.percent}`)
-    const mainWindow = getMainWindow()
-    if (!mainWindow) return
-    mainWindow.webContents.send('download-progress', e)
-  })
-  // Update package download completed
-  autoUpdater.on('update-downloaded', () => {
-    downloading = false
-    downloaded = true
-    logger.info('Update downloaded, ready to install')
-
-    getMainWindow()?.webContents.send('update-downloaded')
-  })
-  // Error checking for updates
-  autoUpdater.on('error', (e) => {
-    logger.error('Error while updating client', e)
-  })
-  autoUpdater.forceDevUpdateConfig = isDev
-
-  setInterval(() => {
-    if (config.autoCheckUpdate) {
-      checkForUpdates().catch((err) => {
-        logger.error('Error checking for updates', err)
-      })
-    }
-  }, config.checkUpdateInterval)
-  if (config.autoCheckUpdate) {
-    checkForUpdates().catch((err) => {
-      logger.error('Error checking for updates', err)
-    })
+  // 플랫폼별 latest.yml 파일 설정
+  const updateConfig = {
+    provider: 'generic',
+    url: 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com',
+    channel: isWindows ? 'windows' : 'mac',
   }
-  logger.info('======== registerUpdater END ========')
+
+  autoUpdater.setFeedURL(updateConfig)
+
+  autoUpdater.on('checking-for-update', () => {
+    logger.info('Checking for update...')
+  })
+
+  autoUpdater.on('update-available', (info) => {
+    logger.info('Update available:', info)
+    getMainWindow()?.webContents.send('update-available', info)
+  })
+
+  autoUpdater.on('update-not-available', (info) => {
+    logger.info('Update not available:', info)
+    getMainWindow()?.webContents.send('update-not-available', info)
+  })
+
+  autoUpdater.on('error', (err) => {
+    logger.error('Error in auto-updater:', err)
+    getMainWindow()?.webContents.send('update-error', err)
+  })
+
+  autoUpdater.on('download-progress', (progressObj) => {
+    logger.info('Download progress:', progressObj)
+    getMainWindow()?.webContents.send('download-progress', progressObj)
+  })
+
+  autoUpdater.on('update-downloaded', (info) => {
+    logger.info('Update downloaded:', info)
+    downloaded = true
+    downloading = false
+    getMainWindow()?.webContents.send('update-downloaded', info)
+  })
+
+  if (allowAutoUpdate) {
+    autoUpdater.checkForUpdates()
+  }
 }
