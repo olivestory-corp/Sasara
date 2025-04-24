@@ -1,0 +1,3 @@
+provider: generic
+url: https://dvnr1hi9fanyr.cloudfront.net/client-release/darwin-x64/
+updaterCacheDirName: klee-electron-updater-test
