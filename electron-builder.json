@@ -1,0 +1,59 @@
+{
+  "appId": "com.olivestory.sasara",
+  "productName": "Sasara",
+  "asar": true,
+  "directories": {
+    "output": "release/${version}"
+  },
+  "files": [
+    "dist-electron",
+    "dist",
+    "public"
+  ],
+  "icon": "./build/icon.png",
+  "mac": {
+    "artifactName": "${productName}_${version}.${ext}",
+    "target": [
+      "zip",
+      "dmg"
+    ],
+    "icon": "./build/icons/icon.icns",
+    "hardenedRuntime": false,
+    "gatekeeperAssess": false,
+    "extendInfo": {
+      "CFBundleDisplayName": "Sasara",
+      "NSAppleEventsUsageDescription": "Requires access to the application support catalog to store data",
+      "NSDesktopFolderUsageDescription": "Requires access to the file system to store application data"
+    },
+    "extraResources": [
+      "./additionalResources/tiktoken_encode"
+    ]
+  },
+  "dmg": {
+    "sign": false
+  },
+  "win": {
+    "target": [
+      {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      }
+    ],
+    "artifactName": "${productName}_${version}.${ext}",
+    "icon": "./build/icons/icon.ico",
+    "requestedExecutionLevel": "requireAdministrator"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowToChangeInstallationDirectory": true,
+    "deleteAppDataOnUninstall": false
+  },
+  "publish": {
+    "provider": "generic",
+    "url": "https://dvnr1hi9fanyr.cloudfront.net/client-release/${platform}-${arch}/",
+    "updaterCacheDirName": "klee-electron-updater"
+  }
+}

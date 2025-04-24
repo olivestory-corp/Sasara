@@ -1,0 +1,64 @@
+@layer base {
+  .theme-newyork {
+    --background: 232 12% 20%;
+    --foreground: 0 0% 98%;
+    --card: 232 12% 24%;
+    --card-foreground: 0 0% 98%;
+    --popover: 232 12% 24%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 123 88% 34%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 3.7% 25.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 25.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 25.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 35.9%;
+    --input: 240 3.7% 55.9%;
+    --ring: 240 4.9% 83.9%;
+    --radius: 0.5rem;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --background-main: 232 12% 24%;
+    --headline-main: 123 88% 74%;
+    --headline-sidebar: 123 88% 74%;
+    --headline-sidebar-selected: 123 88% 74%;
+    --titlebar-background: 235 13% 16%;
+    --titlebar-background-selected: 240 4% 36%;
+    --titlebar-foreground: 0 0% 78%;
+    --titlebar-foreground-selected: 0 0% 98%;
+    --sidebar-background: 232 12% 24%;
+    --sidebar-background-selected: 240 4% 36%;
+    --sidebar-foreground: 240 4% 74%;
+    --sidebar-foreground-selected: 240 4% 74%;
+
+    .prose {
+      --tw-prose-body: hsl(var(--foreground));
+      --tw-prose-headings: hsl(var(--headline-main));
+      --tw-prose-links: hsl(var(--primary));
+      --tw-prose-bold: hsl(var(--headline-main));
+      --tw-prose-counters: hsl(var(--primary));
+      --tw-prose-bullets: hsl(var(--primary));
+      --tw-prose-hr: hsl(var(--border));
+      --tw-prose-quotes: hsl(var(--headline-main));
+      --tw-prose-quote-borders: hsl(var(--border));
+      --tw-prose-pre-code: hsl(var(--foreground));
+      --tw-prose-pre-bg: hsl(232deg 12% 4%);
+
+      /* Not currently used */
+      --tw-prose-th-borders: hsl(var(--primary));
+      --tw-prose-td-borders: hsl(var(--primary));
+      --tw-prose-lead: hsl(var(--primary));
+      --tw-prose-kbd: hsl(var(--primary));
+      --tw-prose-kbd-shadows: hsl(var(--primary));
+      --tw-prose-code: hsl(var(--primary));
+      --tw-prose-captions: hsl(var(--primary));
+    }
+  }
+}

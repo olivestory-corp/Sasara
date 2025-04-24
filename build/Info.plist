@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <!-- 其他配置 -->
+    <key>NSAppleEventsUsageDescription</key>
+    <string>Requires access to the application support catalog to store data</string>
+    <key>LSApplicationCategoryType</key>
+    <string>public.app-category.developer-tools</string>
+    <key>NSDesktopFolderUsageDescription</key>
+    <string>Requires access to the file system to store application data</string>
+</dict>
+</plist>

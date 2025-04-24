@@ -1,0 +1,57 @@
+@import url('./losangeles.css');
+@import url('./sanfrancisco.css');
+@import url('./newyork.css');
+@import url('./shanghai.css');
+
+/*
+* <颜色值写法>
+*  --tw-prose-body: #334155;
+*  --tw-prose-body: hsl(240deg 10% 3.9%);
+*  --tw-prose-body: theme('colors.slate.700');
+*  --tw-prose-body: hsl(var(--foreground));
+*
+* 全局文字颜色配置
+* color: 'var(--tw-prose-body)'
+*
+* 标题颜色配置
+* dt: { color: 'var(--tw-prose-headings)' }
+* h1: { color: 'var(--tw-prose-headings)' }
+* h2: { color: 'var(--tw-prose-headings)' }
+* h3: { color: 'var(--tw-prose-headings)' }
+* h4: { color: 'var(--tw-prose-headings)' }
+*
+* 引导段落（lead paragraph）配置
+* '[class~="lead"]': { color: 'var(--tw-prose-lead)' }（目前笔记没用到）
+*
+* 链接相关配置
+* a: { color: 'var(--tw-prose-links)' }
+*
+* 加粗文本配置
+* strong: { color: 'var(--tw-prose-bold)' }
+*
+* 列表相关配置
+* ol > li::marker: { color: 'var(--tw-prose-counters)' }
+* ul > li::marker: { color: 'var(--tw-prose-bullets)' }
+*
+* 水平分割线配置
+* hr: { borderColor: 'var(--tw-prose-hr)' }
+*
+* 引用块配置
+* blockquote: { color: 'var(--tw-prose-quotes)' }
+* blockquote: { borderInlineStartColor: 'var(--tw-prose-quote-borders)' }
+*
+* 图片说明文字配置
+* figcaption: { color: 'var(--tw-prose-captions)' }（目前笔记没用到）
+*
+* 代码相关配置
+* kbd: { color: 'var(--tw-prose-kbd)' }（目前笔记没用到）
+* kbd: { boxShadow: 'var(--tw-prose-kbd-shadows)' }（目前笔记没用到）
+* code: { color: 'var(--tw-prose-code)' }
+* pre code: { color: 'var(--tw-prose-pre-code)' }
+* pre: { backgroundColor: 'var(--tw-prose-pre-bg)' }
+*
+* 表格相关配置
+* thead: { bordeBottomColor: 'var(--tw-prose-th-borders)' }
+* tfoot: { borderTopColor: 'var(--tw-prose-th-borders)' }
+* 'tbody tr': { borderBottomColor: 'var(--tw-prose-td-borders)' }
+*/

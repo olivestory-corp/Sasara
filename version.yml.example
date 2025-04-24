@@ -1,0 +1,3 @@
+version: "0.6.0"
+darwin_url: "https://dvnr1hi9fanyr.cloudfront.net/ollama/ollama-darwin-0.6.0.tgz"
+windows_url: "https://dvnr1hi9fanyr.cloudfront.net/ollama/ollama-windows-amd64-0.6.0.zip"
