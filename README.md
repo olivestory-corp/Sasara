@@ -132,6 +132,10 @@ After building is complete, you can find the compiled application in the `dist` 
 - `yarn lint:fix`: Automatically fix resolvable code style issues
 - `yarn generate-icons`: Generate application icons (requires app-icon.png file)
 
+## 📄 License & Credits
+
+This project is a fork of [signerlabs/Klee](https://github.com/signerlabs/Klee) and complies with the terms of the [MIT License](https://opensource.org/licenses/MIT).
+
 ## 📖 Technology Stack
 
 <u>[Electron](https://www.electronjs.org/)</u> | <u>[React](https://react.dev/)</u> | <u>[TypeScript](https://www.typescriptlang.org/)</u> | <u>[Vite](https://vite.dev/)</u> | <u>[Tailwind CSS](https://tailwindcss.com/)</u> | <u>[Radix UI](https://www.radix-ui.com/)</u> | <u>[i18nex](https://www.i18next.com/)</u> | <u>[React Query](https://github.com/TanStack/query/)</u> | <u>[Jotai](https://jotai.org/)</u>
