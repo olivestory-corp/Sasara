@@ -17,9 +17,9 @@ const logger = Logger.scope('[main] ollama')
 const execAsync = promisify(exec)
 const extractor = new Extractor()
 const downloader = new Downloader()
-const DARWIN_DOWNLOAD_URL = 'https://dvnr1hi9fanyr.cloudfront.net/ollama/ollama-darwin.tgz'
-const WINDOWS_DOWNLOAD_URL = 'https://dvnr1hi9fanyr.cloudfront.net/ollama/ollama-windows-amd64.zip'
-const VERSION_CHECK_URL = 'https://dvnr1hi9fanyr.cloudfront.net/ollama/version.yml'
+const DARWIN_DOWNLOAD_URL = 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/ollama/ollama-darwin.tgz'
+const WINDOWS_DOWNLOAD_URL = 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/ollama/ollama-windows-amd64.zip'
+const VERSION_CHECK_URL = 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/ollama/version.yml'
 const downloadUrl = process.platform === 'darwin' ? DARWIN_DOWNLOAD_URL : WINDOWS_DOWNLOAD_URL
 
 async function getRemoteVersionInfo(): Promise<IOllamaVersionInfo | null> {
@@ -334,7 +334,7 @@ export async function handleOllamaUpdater() {
         })
       }
 
-      // 如果是 available === 1 且不需要更新，直接启动本地服务
+      // If available === 1 and no update needed, start local service directly
       if (available === 1 && !needUpdate) {
         getMainWindow()?.webContents.send('ollama-updater-status-change', {
           status: 'running',
@@ -344,7 +344,7 @@ export async function handleOllamaUpdater() {
         // Start the program
         await extractAndRunProgram(ollamaExecutablePath)
       }
-      // 如果需要更新或者 available === 0（需要下载）
+      // If update needed or available === 0 (needs download)
       else if (needUpdate || available === 0) {
         if (remoteVersion) {
           getMainWindow()?.webContents.send('ollama-updater-status-change', {
