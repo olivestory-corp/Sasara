@@ -25,8 +25,8 @@ const generalSettingsData = {
     url: 'https://olivestory.co.kr',
   },
   website: {
-    name: 'olivestory.co.kr',
-    url: 'https://olivestory.co.kr',
+    name: 'sasaradesktop.com',
+    url: 'https://sasaradesktop.com',
   },
   socialLinks: [
     { icon: Discord, alt: 'Discord', url: 'https://olivestory.co.kr' },
