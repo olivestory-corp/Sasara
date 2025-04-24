@@ -102,7 +102,6 @@ export const registerUpdater = () => {
   const updateConfig = {
     provider: 'generic',
     url: 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com',
-    // channel: isWindows ? 'windows' : 'mac',
   }
 
   autoUpdater.setFeedURL(updateConfig)
