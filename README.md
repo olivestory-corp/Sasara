@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://github.com/signerlabs/klee-client/releases">
+  <a href="https://github.com/olivestory-corp/Sasara">
     <img src="public/favicon.ico" width="150" height="150" alt="banner" /><br>
   </a>
 </div>
@@ -7,7 +7,7 @@
 # Sasara AI
 Sasara AI brings secure and local AI to your desktop with built-in RAG knowledge base and Markdown note. You can use local mode without any internet connection to protect your privacy.
 
-You can download the latest version from our [Website](https://kleedesktop.com/) or join our [Discord](https://discord.gg/ZwMbWtVuNS) if you need any support.
+You can download the latest version from our [Website](https://sasaradesktop.com/).
 
 At its core, Sasara AI is built on:
 - <u>[Ollama](https://ollama.com/)</u>: For running local LLMs quickly and efficiently.
@@ -15,7 +15,7 @@ At its core, Sasara AI is built on:
 
 ## 🌠 Demo
 
-<img src="public/kleedemo.GIF" alt="Klee Demo" style="border-radius: 8px">
+<img src="public/kleedemo.GIF" alt="Sasara Demo" style="border-radius: 8px">
 
 ## 🤝 Contributing
 We warmly welcome contributions to Sasara AI! Here are some ways you can get involved:
@@ -30,7 +30,7 @@ We warmly welcome contributions to Sasara AI! Here are some ways you can get inv
 
 ## 🔧 Installation
 
-You can download the [released version here](https://github.com/signerlabs/klee-client/releases) or you can setup following the processes below:
+You can download the [released version here](https://sasaradesktop.com/) or you can setup following the processes below:
 
 ### 1. System Requirements
 
@@ -40,8 +40,8 @@ You can download the [released version here](https://github.com/signerlabs/klee-
 ### 2. Clone the Repository
 
 ```bash
-git clone https://github.com/signerlabs/klee-client.git
-cd klee-client
+git clone https://github.com/olivestory-corp/Sasara.git
+cd Sasara
 ```
 
 ### 3. Install Dependencies
