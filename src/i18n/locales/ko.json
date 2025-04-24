@@ -192,7 +192,7 @@
     "addFileSuccess": "파일 추가 성공"
   },
   "chat": {
-    "source": "출처",
+    "source": "문서함",
     "placeholder": "오늘 무엇을 알고 싶으신가요...",
     "answer": "답변",
     "copy": "복사",
