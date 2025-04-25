@@ -14,6 +14,8 @@ import ConversationNew from '@/pages/chat/ConversationNew'
 import RootLayout from '@/pages/RootLayout'
 import CheckPoint from '@/pages/CheckPoint'
 import LanguageSelection from '@/pages/onbording/LanguageSelection'
+import OllamaModelSetting from '@/pages/setting/OllamaModelSetting'
+
 export default function Router() {
   return (
     <HashRouter>
@@ -35,6 +37,7 @@ export default function Router() {
           <Route path={EnumRouterLink.DownloadingService} element={<DownloadingService />}></Route>
           <Route path={EnumRouterLink.ModeSelection} element={<ModeSelection />}></Route>
           <Route path={EnumRouterLink.LanguageSelection} element={<LanguageSelection />}></Route>
+          <Route path="/settings/model" element={<OllamaModelSetting />}></Route>
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

@@ -10,6 +10,7 @@ export enum EnumRouterLink {
   ModeSelection = '/onboarding/mode-selection',
   DownloadingService = '/onboarding/downloading-service',
   Auth = '/auth',
+  ModelSettings = '/settings/model',
 
   ConversationNew = '/conversations/new',
   ConversationDetail = '/conversations/:conversationId',

@@ -138,7 +138,7 @@ export default function OllamaModelSetting() {
   const models = useOllamaSearchModels()
 
   return (
-    <ScrollArea className="h-96">
+    <ScrollArea className="h-[500px]">
       <Card>
         <Table>
           <TableHeader>
