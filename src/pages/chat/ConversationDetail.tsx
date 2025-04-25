@@ -5,11 +5,25 @@ import LogoCard from '@/components/LogoCard'
 import { cn } from '@/lib/utils'
 import ScrollContainer from '@/components/ScrollContainer'
 import { useParams } from 'react-router-dom'
+import { useOllamaLlmModels } from '@/hooks/use-ollama'
+import { useEffect } from 'react'
+import { useIsSettingOpen, useSettingTab } from '@/hooks/use-config'
+import { SettingsTab } from '@/constants/settings'
 
 export default function ConversationDetail() {
   const { conversationId } = useParams()
   const { data: conversationDetail } = useConversationDetailById({ id: conversationId })
   const { messages = [] } = conversationDetail || {}
+  const { data: ollamaModels } = useOllamaLlmModels()
+  const [, setIsSettingOpen] = useIsSettingOpen()
+  const [, setSettingTab] = useSettingTab()
+
+  useEffect(() => {
+    if (ollamaModels && ollamaModels.length === 0) {
+      setSettingTab(SettingsTab.LocalModels)
+      setIsSettingOpen(true)
+    }
+  }, [ollamaModels, setIsSettingOpen, setSettingTab])
 
   const hasMessages = messages.length > 0
 
