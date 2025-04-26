@@ -7,6 +7,7 @@ import TextMenu from './text-menu'
 import { cn, getParentScrollElement } from '@/lib/utils'
 import { IEditorProps } from '@/types'
 import { useThrottleCallback } from '@/hooks/use-throttle'
+
 function extractTextFromNode(node: JSONContent, maxLength?: number): string {
   if (!node.content) return ''
 
@@ -98,7 +99,7 @@ export default function Editor({ content, onContentChange }: IEditorProps) {
   }
 
   // content가 '#'이거나 비어있는 경우 빈 문자열로 처리
-  const editorContent = content === '#' ? '' : content || ''
+  const editorContent = content === '#' || !content ? '' : content
 
   return (
     <div className="relative">
