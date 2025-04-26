@@ -14,6 +14,10 @@ export default function NoteDetail() {
     mutationFn: (newNote: INote) => updateNote(newNote.id, newNote),
   })
 
+  console.log('NoteDetail - isLoading:', isLoading)
+  console.log('NoteDetail - note:', note)
+  console.log('NoteDetail - note html_content:', note?.html_content)
+
   const handleContentChange = useCallback<IEditorProps['onContentChange']>(
     async (params) => {
       if (!note) return
@@ -28,15 +32,20 @@ export default function NoteDetail() {
     [note, queryClient, updateNoteMutateAsync],
   )
 
+  // html_content가 '#'이고 content가 있는 경우 content를 사용
+  const editorContent = note?.html_content === '#' && note?.content 
+    ? `<h1>${note.title}</h1>${note.content}`
+    : note?.html_content || ''
+
   return (
     <ScrollArea className="h-full">
       <div className="mx-auto max-w-3xl px-4">
         {isLoading ? (
-          <div></div>
+          <div>Loading...</div>
         ) : !note ? (
           <EmptyNote />
         ) : (
-          <Editor key={note.id} content={note.html_content || ''} onContentChange={handleContentChange} />
+          <Editor key={note.id} content={editorContent} onContentChange={handleContentChange} />
         )}
       </div>
     </ScrollArea>

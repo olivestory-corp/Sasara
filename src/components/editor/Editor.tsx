@@ -39,9 +39,8 @@ function extractTitleFromJSON(json: JSONContent): string {
 }
 
 export default function Editor({ content, onContentChange }: IEditorProps) {
-  // const [config] = useConfig()
-  // const [contentId, setContentId] = useState('')
-  // const [editable, setEditable] = useState(true)
+  console.log('Editor - content:', content)
+  
   const editorState = useEditorState()
   const providerValue = useMemo(() => {
     return {
@@ -60,6 +59,9 @@ export default function Editor({ content, onContentChange }: IEditorProps) {
         const text = editor.getText()
         const title = extractTitleFromJSON(json)
         const content = text.startsWith(title) ? text.slice(title.length).trim() : text
+        
+        console.log('Editor - handleContentChange:', { html, json, text, title, content })
+        
         onContentChange?.({
           html,
           json,
@@ -95,7 +97,8 @@ export default function Editor({ content, onContentChange }: IEditorProps) {
     }
   }
 
-  // console.log('editor root render', content)
+  // content가 '#'이거나 비어있는 경우 빈 문자열로 처리
+  const editorContent = content === '#' ? '' : content || ''
 
   return (
     <div className="relative">
@@ -104,7 +107,7 @@ export default function Editor({ content, onContentChange }: IEditorProps) {
           onUpdate={handleContentChange}
           onSelectionUpdate={handleSelectionChange}
           extensions={extensions}
-          content={content || '#'}
+          content={editorContent}
           autofocus
           editorProps={{
             attributes: {
