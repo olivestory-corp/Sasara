@@ -102,13 +102,13 @@ export function createNewNote(params?: Omit<INote, keyof IBaseModel>) {
     create_at: Date.now(),
     update_at: Date.now(),
     delete_at: null,
-    folder_id: '',
     title: params?.title || '',
     content: params?.content || '',
-    type: 'note',
-    status: 'normal',
-    is_pin: false,
-    html_content: params?.html_content ?? '#',
+    html_content: params?.html_content || `<h1>${params?.title || ''}</h1>`,
+    is_pin: params?.is_pin || false,
+    folder_id: params?.folder_id || '',
+    status: params?.status || 'normal',
+    type: 'note'
   }
   return note
 }
