@@ -13,9 +13,9 @@ At its core, Sasara AI is built on:
 - <u>[Ollama](https://ollama.com/)</u>: For running local LLMs quickly and efficiently.
 - <u>[LlamaIndex](https://www.llamaindex.ai/)</u>: As the data framework.
 
-## 🌠 Demo
+## 🌠 Screenshot 
 
-<img src="public/kleedemo.GIF" alt="Sasara Demo" style="border-radius: 8px">
+<img src="public/screenshot1.png" alt="Sasara Demo" style="border-radius: 8px">
 
 ## 🤝 Contributing
 We warmly welcome contributions to Sasara AI! Here are some ways you can get involved:
