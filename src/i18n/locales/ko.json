@@ -344,5 +344,8 @@
     "cancel": "취소",
     "switchToLocalMode": "로컬 모드",
     "upgrade": "Sasara Pro"
+  },
+  "ollama": {
+    "installNotice": "더 많은 모델을 사용하고 싶다면 Ollama를 직접 설치해보세요. (https://ollama.com/)"
   }
 } 
