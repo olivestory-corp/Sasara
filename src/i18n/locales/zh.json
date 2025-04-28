@@ -351,5 +351,8 @@
     "cancel": "取消",
     "switchToLocalMode": "本地模式",
     "upgrade": "Sasara Pro"
+  },
+  "ollama": {
+    "installNotice": "如需使用更多模型，请自行安装 Ollama。 (https://ollama.com/)"
   }
 }

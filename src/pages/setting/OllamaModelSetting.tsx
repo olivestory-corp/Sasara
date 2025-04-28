@@ -139,6 +139,11 @@ export default function OllamaModelSetting() {
 
   return (
     <ScrollArea className="h-[500px]">
+      <Card className="mb-4 p-4 bg-blue-50 text-blue-900">
+        <a href="https://ollama.com/" target="_blank" rel="noopener noreferrer">
+          {t('ollama.installNotice')}
+        </a>
+      </Card>
       <Card>
         <Table>
           <TableHeader>
