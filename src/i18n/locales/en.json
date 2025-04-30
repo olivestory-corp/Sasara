@@ -209,8 +209,8 @@
     "failedToRespondReason": "Failed to respond. Please try again. Error message: {{message}}"
   },
   "logo": {
-    "name": "Sasara",
-    "description": "Build your second brain"
+    "name": "Sasara AI",
+    "description": "Your personal AI assistant"
   },
   "inspector": {
     "addMore": "Add More",

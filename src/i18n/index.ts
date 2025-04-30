@@ -2,6 +2,9 @@ import i18next from 'i18next'
 import { initReactI18next } from 'react-i18next'
 import ko from './locales/ko.json'
 import en from './locales/en.json'
+import ja from './locales/ja.json'
+import es from './locales/es.json'
+import zh from './locales/zh.json'
 import { ILanguage } from '@/types'
 import LanguageDetector from 'i18next-browser-languagedetector'
 import { configAtom } from '@/hooks/use-config'
@@ -13,6 +16,9 @@ import { getDefaultStore } from 'jotai'
 const resources = {
   ko: { translation: ko },
   en: { translation: en },
+  ja: { translation: ja },
+  es: { translation: es },
+  zh: { translation: zh }
 }
 
 const store = getDefaultStore()
@@ -25,13 +31,21 @@ i18next
   .use(initReactI18next) // passes i18n down to react-i18next
   .init({
     resources,
-    lng: defaultLang || 'ko',
-    fallbackLng: 'ko' as ILanguage['id'],
-
-    interpolation: {
-      escapeValue: false, // react already safes from xss
+    fallbackLng: 'en' as ILanguage['id'],
+    detection: {
+      order: ['localStorage', 'navigator'],
+      lookupLocalStorage: 'i18nextLng',
+      caches: ['localStorage']
     },
+    interpolation: {
+      escapeValue: false
+    }
   })
+
+// Save the language preference when it changes
+i18next.on('languageChanged', (lng) => {
+  localStorage.setItem('i18nextLng', lng)
+})
 
 if (import.meta.hot) {
   import.meta.hot.on('i18n-update', async ({ file, content }: { file: string; content: string }) => {
@@ -40,11 +54,11 @@ if (import.meta.hot) {
     const lang = file.split('/').pop()?.replace('.json', '')
     if (!lang) return
     i18next.addResourceBundle(
-      lang, // Language code, such as 'zh' or 'en'
-      'translation', // Namespace, empty string means using the default namespace
-      resources, // Translation resource object to be added
-      true, // deep - Whether to deep merge with existing translations
-      true, // overwrite - Whether to overwrite existing translations
+      lang,
+      'translation',
+      resources,
+      true,
+      true
     )
 
     await i18next.reloadResources(lang, 'translation')
