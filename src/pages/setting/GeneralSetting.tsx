@@ -22,16 +22,16 @@ import {
 const generalSettingsData = {
   developer: {
     name: 'Olivestory Corp.',
-    url: 'https://olivestory.co.kr',
+    url: 'https://sasaradesktop.com',
   },
   website: {
     name: 'sasaradesktop.com',
     url: 'https://sasaradesktop.com',
   },
   socialLinks: [
-    { icon: Discord, alt: 'Discord', url: 'https://olivestory.co.kr' },
-    { icon: X, alt: 'X', url: 'https://olivestory.co.kr' },
-    { icon: Ins, alt: 'Instagram', url: 'https://olivestory.co.kr' },
+    { icon: Discord, alt: 'Discord', url: 'https://sasaradesktop.com' },
+    { icon: X, alt: 'X', url: 'https://sasaradesktop.com' },
+    { icon: Ins, alt: 'Instagram', url: 'https://sasaradesktop.com' },
   ],
 }
 

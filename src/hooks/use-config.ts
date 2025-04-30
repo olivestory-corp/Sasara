@@ -9,10 +9,10 @@ import { IConfig, ISearchConfig, ISortConfig, OllamaModelSearch } from '@/types'
 export const configAtom = atomWithStorage<IConfig>('config-1.5', {
   theme: DEFAULT_BASE_COLOR,
   fontSize: 16,
-  // Set Korean as default language
-  language: 'ko',
-  // Default to Korean
-  modelLanguage: 'ko',
+  // Set English as default language
+  language: 'en',
+  // Default to English
+  modelLanguage: 'en',
   privateMode: true,
   defaultLlmModel: '',
   defaultPrivateLlmModel: '',
