@@ -6,7 +6,7 @@ export const LANGUAGES = [
   { id: 'ko', name: '한국어' }, 
 ] as const
 
-export const DEFAULT_MODEL_LANGUAGE = { id: 'en', name: 'English' }
+export const DEFAULT_MODEL_LANGUAGE = { id: 'auto', name: 'Auto' }
 
 export const MODEL_LANGUAGES = [
   { id: 'auto', name: 'Auto' },

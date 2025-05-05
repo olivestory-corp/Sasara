@@ -6,13 +6,20 @@ import { OLLAMA_MODELS_SEARCH } from '@/constants/models'
 
 import { IConfig, ISearchConfig, ISortConfig, OllamaModelSearch } from '@/types'
 
+import { DEFAULT_MODEL_LANGUAGE } from '@/constants/languages'
+// ... 기존 import 생략
+
 export const configAtom = atomWithStorage<IConfig>('config-1.5', {
   theme: DEFAULT_BASE_COLOR,
   fontSize: 16,
-  // Set English as default language
-  language: 'en',
-  // Default to English
-  modelLanguage: 'en',
+  // 브라우저 언어에 따라 자동 설정 (한국어도 추가하고 싶으면 조건 확장 가능)
+  language: navigator.language.startsWith('zh') ? 'zh'
+          : navigator.language.startsWith('ko') ? 'ko'
+          : navigator.language.startsWith('ja') ? 'ja'
+          : navigator.language.startsWith('es') ? 'es'
+          : 'en',
+  // MODEL_LANGUAGES에서 지정한 기본값 사용
+  modelLanguage: DEFAULT_MODEL_LANGUAGE.id,
   privateMode: true,
   defaultLlmModel: '',
   defaultPrivateLlmModel: '',
