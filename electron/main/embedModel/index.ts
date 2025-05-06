@@ -28,7 +28,7 @@ const defaultEmbedModelInfo = {
   name: 'all-MiniLM-L6-v2',
   description: 'all-MiniLM-L6-v2',
   weight: 9,
-  download_url: 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/all-MiniLM-L6-v2.zip',
+  download_url: 'https://kerneldownload.sasaradesktop.com/all-MiniLM-L6-v2.zip',
   created_at: '2024-11-25T07:50:44.438412+00:00',
   updated_at: '2024-11-25T07:50:44.438412+00:00',
 }

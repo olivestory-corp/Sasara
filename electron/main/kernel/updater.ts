@@ -21,8 +21,8 @@ const execAsync = promisify(exec)
 
 // 커널 버전과 다운로드 URL 상수 정의
 const KERNEL_VERSION = '1.0.4'
-const KERNEL_DOWNLOAD_URL = 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/main(1.0.4).zip'
-const KERNEL_DOWNLOAD_URL_MAC = 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/main-darwin(1.0.4).zip'
+const KERNEL_DOWNLOAD_URL = 'https://kerneldownload.sasaradesktop.com/main(1.0.4).zip'
+const KERNEL_DOWNLOAD_URL_MAC = 'https://kerneldownload.sasaradesktop.com/main-darwin(1.0.4).zip'
 
 async function checkAndFixPermissions(dirPath: string): Promise<void> {
   try {

@@ -17,9 +17,9 @@ const logger = Logger.scope('[main] ollama')
 const execAsync = promisify(exec)
 const extractor = new Extractor()
 const downloader = new Downloader()
-const DARWIN_DOWNLOAD_URL = 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/ollama/ollama-darwin.tgz'
-const WINDOWS_DOWNLOAD_URL = 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/ollama/ollama-windows-amd64.zip'
-const VERSION_CHECK_URL = 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/ollama/version.yml'
+const DARWIN_DOWNLOAD_URL = 'https://ollamadownload.sasaradesktop.com/ollama-darwin.tgz'
+const WINDOWS_DOWNLOAD_URL = 'https://ollamadownload.sasaradesktop.com/ollama-windows-amd64.zip'
+const VERSION_CHECK_URL = 'https://ollamadownload.sasaradesktop.com/version.yml'
 const downloadUrl = process.platform === 'darwin' ? DARWIN_DOWNLOAD_URL : WINDOWS_DOWNLOAD_URL
 
 async function getRemoteVersionInfo(): Promise<IOllamaVersionInfo | null> {

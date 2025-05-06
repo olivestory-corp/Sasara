@@ -101,7 +101,7 @@ export const registerUpdater = () => {
   // 플랫폼별 latest.yml 파일 설정
   const updateConfig = {
     provider: 'generic',
-    url: 'https://olivedownlod.s3.ap-northeast-2.amazonaws.com/sasara',
+    url: 'https://download.sasaradesktop.com',
   }
 
   autoUpdater.setFeedURL(updateConfig)
