@@ -12,8 +12,9 @@ You can download the latest version from our [Website](https://sasaradesktop.com
 At its core, Sasara AI is built on:
 - <u>[Ollama](https://ollama.com/)</u>: For running local LLMs quickly and efficiently.
 - <u>[LlamaIndex](https://www.llamaindex.ai/)</u>: As the data framework.
+- <u>[Klee](https://github.com/signerlabs/klee-service)</u>: As the integrated AI backend kernel.
 
-## 🌠 Screenshot 
+## 🌠 Screenshot
 
 <img src="public/screenshot1.png" alt="Sasara Demo" style="border-radius: 8px">
 
